@@ -21,7 +21,7 @@ dim_spu=5
 n_envs=3
 echo "Default experiment: dim_inv=${dim_inv} dim_spu=${dim_spu} n_envs=${n_envs}"
 
-python3 sweep.py \
+python3.8 scripts/sweep.py \
     --models ERM IRMv1 ANDMask IGA Oracle \
     --num_iterations $num_iterations \
     --datasets Example1 Example1s Example2 Example2s Example3 Example3s \
@@ -40,7 +40,7 @@ echo "Varying number of environments: n_envs"
 for n_envs in 2 3 4 5 6 7 8 9 10 
 do
     echo "dim_inv=${dim_inv} dim_spu=${dim_spu} n_envs=${n_envs}"
-    python3 sweep.py \
+    python3.8 scripts/sweep.py \
         --models ERM IRMv1 ANDMask IGA Oracle \
         --num_iterations 10 \
         --datasets Example1 Example1s Example2 Example2s Example3 Example3s \
@@ -59,7 +59,7 @@ echo "Varying spurious dimensions: dim_spu"
 for dim_spu in 0 1 2 3 4 5 6 7 8 9 10
 do
     echo "dim_inv=${dim_inv} dim_spu=${dim_spu} n_envs=${n_envs}"
-    python3 sweep.py \
+    python3.8 scripts/sweep.py \
         --models ERM IRMv1 ANDMask IGA Oracle \
         --num_iterations $num_iterations \
         --datasets Example1 Example1s Example2 Example2s Example3 Example3s \

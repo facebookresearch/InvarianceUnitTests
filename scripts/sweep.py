@@ -5,8 +5,8 @@ import random
 import models
 import datasets
 import argparse
-import submitit
 import getpass
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Synthetic invariances')
@@ -25,6 +25,12 @@ if __name__ == "__main__":
     parser.add_argument('--cluster', action="store_true")
     parser.add_argument('--jobs_cluster', type=int, default=512)
     args = vars(parser.parse_args())
+
+    try:
+        import submitit
+    except:
+        args["cluster"] = False
+        pass
 
     all_jobs = []
     if len(args["models"]):
@@ -69,8 +75,8 @@ if __name__ == "__main__":
             gpus_per_node=0,
             array_parallelism=args["jobs_cluster"],
             cpus_per_task=1,
-            comment="NeurIPS causality workshop 14/11/20",
-            partition="priority")
+            comment="",
+            partition="learnfair")
 
         executor.map_array(main.run_experiment, all_jobs)
     else:
