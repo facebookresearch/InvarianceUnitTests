@@ -1,5 +1,7 @@
 # Linear unit-tests for invariance discovery - Code
 
+Official code for the paper [Linear unit-tests for invariance discovery](https://arxiv.org/abs/2102.10867), presented as a spotlight talk at the [NeurIPS 2020 Workshop Causal Discovery & Causality-Inspired Machine Learning](https://www.cmu.edu/dietrich/causality/neurips20ws/).
+
 ### Installing requirements
 
 ```bash
@@ -48,3 +50,16 @@ conda remove --name invariance --all
 ## License
 
 This source code is released under the MIT license, included [here](LICENSE).
+
+## Reference
+
+If you make use of our suite of tasks in your research, please cite the following in your manuscript:
+
+```
+@article{aubin2021linear,
+  title={Linear unit-tests for invariance discovery},
+  author={Aubin, Benjamin and S{\l}owik, Agnieszka and Arjovsky, Martin and Bottou, Leon and Lopez-Paz, David},
+  journal={arXiv preprint arXiv:2102.10867},
+  year={2021}
+}
+```
