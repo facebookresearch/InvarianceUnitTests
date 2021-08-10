@@ -27,7 +27,6 @@ class Example1:
             for env in range(3, n_envs):
                 var = 10 ** torch.zeros(1).uniform_(-2, 1).item()
                 self.envs["E" + str(env)] = var
-        print("Environments variables:", self.envs)
 
         self.wxy = torch.randn(self.dim_inv, self.dim_inv) / self.dim_inv
         self.wyz = torch.randn(self.dim_inv, self.dim_spu) / self.dim_spu
@@ -74,7 +73,6 @@ class Example2:
                     "p": torch.zeros(1).uniform_(0.9, 1).item(),
                     "s": torch.zeros(1).uniform_(0.3, 0.7).item()
                 }
-        print("Environments variables:", self.envs)
 
         # foreground is 100x noisier than background
         self.snr_fg = 1e-2
