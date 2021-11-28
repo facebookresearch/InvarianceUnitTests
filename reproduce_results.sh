@@ -42,7 +42,7 @@ do
     echo "dim_inv=${dim_inv} dim_spu=${dim_spu} n_envs=${n_envs}"
     python3.8 scripts/sweep.py \
         --models ERM IRMv1 ANDMask IGA Oracle \
-        --num_iterations 10 \
+        --num_iterations $num_iterations \
         --datasets Example1 Example1s Example2 Example2s Example3 Example3s \
         --dim_inv $dim_inv --dim_spu $dim_spu \
         --n_envs $n_envs \
