@@ -98,7 +98,7 @@ class Example2:
                 math.sqrt(10) + self.avg_bg[i]) * self.snr_bg), -1)
 
         if split == "test":
-            x[:, self.dim_spu:] = x[torch.randperm(len(x)), self.dim_spu:]
+            x[:, self.dim_inv:] = x[torch.randperm(len(x)), self.dim_inv:]
 
         inputs = x @ self.scramble
         outputs = x[:, :self.dim_inv].sum(1, keepdim=True).gt(0).float()
